@@ -1,0 +1,26 @@
+##phase-2
+##Normal task--Typing speed test
+import random
+import time
+sample_text="typing speed tester application that allows users to practice their typing skills and receive feedback"
+def wpm(start,end,text):
+  typed=len(text.split())
+  time=(end-start)/60
+  wpm=typed/time
+  return wpm
+def randomm_text():
+  words=sample_text.split()
+  random.shuffle(words)
+  return ' '.join(words)
+def typing_speed():
+  print("welcome to the typing speed")
+  random_text=randomm_text()
+  print("type the this text")
+  print(random_text)
+  start=time.time()
+  text=input("type here: ")
+  end=time.time()
+  wpmm=wpm(start,end,text)
+  print(f"your typing speed is: {wpmm: .2f} wpm")
+if __name__=="__main__":
+  typing_speed()
